@@ -4,9 +4,10 @@ import dotenv
 
 dotenv.load_dotenv()
 
+# Add EEZO_API_KEY to your .env file
 e = Eezo()
 
-CONNECTOR_ID = "dc81c93d-663c-4d05-81a3-00c0e4c75238"
+CONNECTOR_ID = "connector-id"
 
 
 def super_agent(c, choice):
