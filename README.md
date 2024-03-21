@@ -1,2 +1,1 @@
-# client
-Eezo client to connect to the API
+# Open Source Agents
