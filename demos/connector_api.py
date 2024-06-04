@@ -4,7 +4,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
-CONNECTOR_ID = "dc81c93d-663c-4d05-81a3-00c0e4c75238"
+AGENT_ID = "dc81c93d-663c-4d05-81a3-00c0e4c75238"
 
 # Add EEZO_API_KEY to your .env file
 e = Eezo()
@@ -35,7 +35,7 @@ def super_agent(c, choice):
     m.notify()
 
 
-@e.on(CONNECTOR_ID)
+@e.on(AGENT_ID)
 def connector(c, **kwargs):
     super_agent(c, kwargs.get("choice", "image"))
 

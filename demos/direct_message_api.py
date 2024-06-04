@@ -5,14 +5,14 @@ import time
 
 dotenv.load_dotenv()
 
-DEMO_EEZO_ID = "eezo-id"
-DEMO_THREAD_ID = "thread-id"
+EEZO_ID = "57e01563-a8e4-4cf8-b74c-c211c6d205b5"
+THREAD_ID = "4471cef7-14fa-4b96-ba27-a1b867c96f01"
 
 # Add EEZO_API_KEY to your .env file
 e = Eezo()
 
 # Send a message to the Chat UI
-m = e.new_message(eezo_id=DEMO_EEZO_ID, thread_id=DEMO_THREAD_ID, context="test")
+m = e.new_message(eezo_id=EEZO_ID, thread_id=THREAD_ID, context="test")
 
 m.add("text", text="Hello, world!")
 m.notify()
