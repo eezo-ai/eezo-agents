@@ -16,78 +16,7 @@ e = Eezo(logger=True)
 g = Groq()
 
 
-eezo_ui_api = """
-TEXT:
-Parameters:
-- text: str (The main text content for this component)
-
-Example:
-```python
-self.message.add("text", text="Hello World!")
-```
-
-CHART:
-Parameters:
-- chart_type: str (Available types: ["donut","pie","heatmap","radar","polarArea","radialBar","bar-horizontal","bar-stacked","bar","line-area","line","candlestick","treemap","scatter"])
-- name: str (Legend for the chart)
-- xaxis: List[str] (X-axis labels)
-- chart_title: str (Title of the chart)
-
-Depending on the chart type, the format of 'data' varies:
-
-# Data for donut, pie, treemap:
-```python
-data = [10, 20, 30]  # List of datapoints
-```
-
-# Data for candlestick:
-```python
-data = [
-    [open1, high1, low1, close1],
-    [open2, high2, low2, close2],
-    ...
-]  # List of [open, high, low, close]
-```
-
-# Data for scatter:
-```python
-data = [{
-    "data": [[x1, y1], [x2, y2], ...],
-    "name": "Legend for scatter data",
-}]
-```
-
-# Data for all others:
-```python
-data = [{
-    "data": [10, 20, 30],
-    "name": "Legend for data series",
-}]
-```
-
-Example usage:
-```python
-self.message.add('chart', chart_type="bar", data=[{"data": [10, 20, 30], "name": "Monthly Sales"}], name="Sales", xaxis=["Jan", "Feb", "Mar"], chart_title="Monthly Sales Overview")
-```
-
-IMAGE:
-Parameters:
-- url: str (The URL of the image)
-
-Example:
-```python
-self.message.add("image", url="https://example.com/image.jpg")
-```
-
-YOUTUBE VIDEO:
-Parameters:
-- video_id: str (The ID of the video)
-
-Example:
-```python
-self.message.add("youtube_video", video_id="xyz")
-```
-"""
+eezo_ui_api = e.get_ui_component_api_as_string()
 
 
 class GenerateUIArgsSchema(BaseModel):
